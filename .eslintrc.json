@@ -1,0 +1,18 @@
+{
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 8
+  },
+  "plugins": ["prettier"],
+  "extends": ["eslint:recommended"],
+  "rules": {
+    "prettier/prettier": "error",
+    "no-var": "error",
+    "prefer-const": "error",
+    "prefer-arrow-callback": "error"
+  }
+}

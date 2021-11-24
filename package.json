@@ -1,0 +1,47 @@
+{
+  "name": "youtube-stats",
+  "version": "1.0.0",
+  "description": "Get viewCount likes dislikes averageRating from youtube",
+  "private": true,
+  "scripts": {
+    "start": "node ./dist/index.js",
+    "start:build": "rimraf dist && ncc build ./src/index.js -s -m -o dist && node ./dist/index.js",
+    "dev": "nodemon --exec ./node_modules/.bin/babel-node ./src/index.js",
+    "lint": "eslint --ext .js --ignore-path .gitignore .",
+    "build": "rimraf dist && ncc build ./src/index.js -s -m -o dist"
+  },
+  "author": {
+    "name": "Proflylab",
+    "email": "proflylab@pm.me",
+    "url": "https://github.com/proflylab"
+  },
+  "lint-staged": {
+    "*.{js}": "npm lint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/eslint-parser": "^7.16.3",
+    "@babel/node": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@vercel/ncc": "^0.32.0",
+    "eslint": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.4.1",
+    "rimraf": "^3.0.2"
+  }
+}
