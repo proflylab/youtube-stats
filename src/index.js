@@ -23,7 +23,7 @@ app.get('/watch', async (req, res) => {
   if (likes) likes = +likes[1].replace(/\D/g, '')
   let averageRating = /averageRating":(.*),"allowRatings/g.exec(data)
   if (averageRating) averageRating = +averageRating[1]
-  let dislikes = ((averageRating - 1) / likes) * (5 - averageRating)
+  let dislikes = (likes * (5 - averageRating)) / (averageRating - 1)
   dislikes = Math.round(dislikes)
   return res.json({ id, viewCount, likes, dislikes, averageRating })
 })
