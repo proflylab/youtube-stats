@@ -8,6 +8,10 @@ Get viewCount likes dislikes averageRating from youtube
 ### Example
 ![alt text](https://i.imgur.com/QrYJoOC.png)
 
+## Installation
+```
+npm install
+```
 ## Start
 ```
 npm run dev
